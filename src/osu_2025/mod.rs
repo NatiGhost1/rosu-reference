@@ -1,5 +1,6 @@
 use rosu_map::util::Pos;
 use rosu_pp::{
+    any::CalculateError,
     model::mode::{ConvertError, GameMode, IGameMode},
     osu::OsuHitResults,
     Beatmap, Difficulty,
@@ -33,6 +34,13 @@ impl IGameMode for Osu25 {
     type GradualPerformance = ();
 
     fn difficulty(_: &Difficulty, _: &Beatmap) -> Result<Self::DifficultyAttributes, ConvertError> {
+        unimplemented!()
+    }
+
+    fn checked_difficulty(
+        _: &Difficulty,
+        _: &Beatmap,
+    ) -> Result<Self::DifficultyAttributes, CalculateError> {
         unimplemented!()
     }
 

@@ -1,5 +1,6 @@
 use rosu_map::section::general::GameMode;
 use rosu_pp::{
+    any::CalculateError,
     model::mode::{ConvertError, IGameMode},
     taiko::TaikoHitResults,
     Beatmap, Difficulty,
@@ -31,6 +32,13 @@ impl IGameMode for Taiko25 {
     type GradualPerformance = ();
 
     fn difficulty(_: &Difficulty, _: &Beatmap) -> Result<Self::DifficultyAttributes, ConvertError> {
+        unimplemented!()
+    }
+
+    fn checked_difficulty(
+        _: &Difficulty,
+        _: &Beatmap,
+    ) -> Result<Self::DifficultyAttributes, CalculateError> {
         unimplemented!()
     }
 
